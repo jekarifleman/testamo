@@ -63,13 +63,13 @@ define([], () =>
             for (let brand of carBrandsFromField) {
                 
                 if (brand.title === 'Выбрать') {
-                	brand.addEventListener('click', ()=> {
+                	brand.parentElement.addEventListener('click', ()=> {
                 		hideCarModelsFromBrand('', carModelsFromField, listCarsBrandModel)
                 		document.querySelector(`#edit_card div[data-id="${divElementModelDataId}"] .linked-form__field__value ul li span`).click()
                 	})
                 } else {
                 	let brandName = listCarsBrandDataId[brand.parentElement.getAttribute('data-value')]
-                	brand.addEventListener('click', ()=> {
+                	brand.parentElement.addEventListener('click', ()=> {
                 		hideCarModelsFromBrand(brandName, carModelsFromField, listCarsBrandModel)
                 		document.querySelector(`#edit_card div[data-id="${divElementModelDataId}"] .linked-form__field__value ul li span`).click()
                 	})
